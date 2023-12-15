@@ -1,0 +1,57 @@
+<!-- dishes.component.html -->
+
+<!-- <div class="dishes-grid">
+    <div *ngFor="let dish of dishes">
+        <img [src]="dish.image" alt="{{ dish.name }}">
+        <div>{{ dish.name }}</div>
+        <div>${{ dish.price }}</div>
+        <div>{{ dish.rating }}</div>
+    </div>
+</div> -->
+
+
+<div class="grid-view" *ngIf="view === 'grid'">
+    <div class="card text-center">
+        <div class="card-header fw-bold fs-5 text-success">
+            <h5>Hamburguer</h5>
+        </div>
+
+        <div class="overflow-hidden d-flex justify-content-center align-items-center">
+            <img src="../../../../../assets/Images/hamburguer1.png" alt="hamburguesa" class="card-img-top">
+        </div>
+
+        <div class="card-body">
+            <h6 class="card-subtitle my-2 text-primary">Value: ★★★★☆</h6>
+            <p class="card-text description">Price: </p>
+        </div>
+
+        <div class="card-footer">
+            <button class="btn btn-outline-success" type="button">Add to Cart</button>
+        </div>
+    </div>
+</div>
+
+<div class="list-view" *ngIf="view === 'list'">
+    <div class="card">
+        <div class="row">
+            <div class="col-md-4 overflow-hidden d-flex justify-content-center align-items-center">
+                <img src="../../../../../assets/Images/hamburguer1.png" alt="hamburguesa"
+                    class="img-fluid rounded-start">
+            </div>
+
+            <div class="col">
+                <div class="card-header text-center">Header</div>
+
+
+                <div class="card-body">
+                    <h6 class="card-subtitle my-2 text-primary">Value: ★★★★☆</h6>
+                    <p class="card-text description">Price: </p>
+                </div>
+
+                <div class="card-footer">
+                    <button class="btn btn-outline-success" type="button">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

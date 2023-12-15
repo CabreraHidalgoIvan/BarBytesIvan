@@ -1,0 +1,61 @@
+<!-- <h1>Categorias</h1>
+
+<div class="container mt-1">
+    <div class="row row-cols-1 row-cols-md-5 g-4">
+        <div class="col">
+            <a href="">
+                <div class="card" *ngFor="let category of listCategorias">
+                    <img src="../../../assets/Images/pizza1.png" alt="" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">{{category.nombre}}</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div> -->
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-auto">
+
+            <!-- Carrusel de Bootstrap -->
+            <div id="carouselCategories" class="carousel slide" data-ride="carousel">
+                <!-- Indicadores del carrusel -->
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselCategories" data-slide-to="0" class="active"></li>
+                    <!-- Genera un indicador por cada conjunto de 5 categorías -->
+                </ol>
+
+                <!-- Contenedor de los elementos del carrusel -->
+                <div class="carousel-inner">
+                    <!-- Asegúrate de tener una clase 'active' en el primer 'carousel-item' -->
+                    <div class="carousel-item active">
+                        <a (click)="showDigitalMenu()">
+                            <div class="d-flex">
+                                <!-- Repite el 'div' para las primeras 5 categorías -->
+                                <div class="card" *ngFor="let category of listCategorias | slice:0:5">
+                                    <img src="{{category.img}}" alt="" class="card-img-top">
+                                    <div class="card-body card-img-overlay">
+                                        <h5 class="card-title nombre-categoria">{{category.nombre}}</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- Repite el 'carousel-item' para los siguientes grupos de 5 categorías -->
+                </div>
+
+                <!-- Controles del carrusel -->
+                <a class="carousel-control-prev" href="#carouselCategories" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Anterior</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselCategories" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Siguiente</span>
+                </a>
+            </div>
+
+        </div>
+    </div>
+</div>

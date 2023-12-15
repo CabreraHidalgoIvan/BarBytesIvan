@@ -1,0 +1,47 @@
+<mat-drawer-container [autosize]="true" class="example-container">
+    <mat-drawer mode="side" opened class="bg-white">
+        <!-- Contenido del drawer -->
+    </mat-drawer>
+
+    <mat-drawer-content>
+        <div class="login-container">
+            <mat-card class="login-card">
+                <!-- ... header ... -->
+                <mat-card-content>
+                    <form (ngSubmit)="onLogin()">
+                        <mat-form-field appearance="fill">
+                            <mat-label>Name</mat-label>
+                            <input matInput [(ngModel)]="name" name="name" placeholder="Name" required>
+                        </mat-form-field>
+
+                        <mat-form-field appearance="fill">
+                            <mat-label>Password</mat-label>
+                            <input matInput [type]="hide ? 'password' : 'text'" [(ngModel)]="password" name="password"
+                                placeholder="Password" required>
+                            <button mat-icon-button matSuffix (click)="togglePasswordVisibility()">
+                                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                            </button>
+                        </mat-form-field>
+
+                        <div class="actions">
+                            <button mat-raised-button color="primary" type="submit">SIGN IN</button>
+                            <button mat-button (click)="onSubscribe()">SUBSCRIBE</button>
+                        </div>
+                    </form>
+                </mat-card-content>
+            </mat-card>
+
+            <mat-card class="role-card">
+                <mat-card-content>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Name</mat-label>
+                        <input matInput [(ngModel)]="name" name="userName" placeholder="Name" required>
+                    </mat-form-field>
+                    <div class="actions">
+                        <button mat-raised-button color="warn" (click)="loginAsGuest()">GUEST</button>
+                    </div>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </mat-drawer-content>
+</mat-drawer-container>

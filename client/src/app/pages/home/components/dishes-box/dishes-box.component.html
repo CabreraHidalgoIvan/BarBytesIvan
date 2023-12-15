@@ -1,0 +1,27 @@
+<mat-card *ngIf="dishes" [ngClass]="{'text-center': !fullWidthMode}">
+    <div [ngClass]="{'flex': fullWidthMode}">
+        <img class="mb-1 mx-auto h-[200px]" [ngClass]="{'h-[200px]': !fullWidthMode, 'h-[360px]': fullWidthMode}"
+            src="https://via.placeholder.com/150" alt="Prueba" />
+
+        <div class="w-full" [ngClass]="{'px-8 flex flex-col justify-between': fullWidthMode }">
+            <div>
+                <h5>{{dishes.category.join(', ')}}</h5>
+                <p class="truncate hover:whitespace-normal">{{dishes.title}}</p>
+                <p *ngIf="fullWidthMode">{{dishes.description}}</p>
+            </div>
+
+            <div class="flex justify-between">
+
+                <button mat-icon-button (click)="openDishesModal(dishes)">
+                    <mat-icon class="text-gray-500">settings</mat-icon>
+                </button>
+
+                <span class="text-red-400">{{ dishes.price| currency }}</span>
+
+                <button (click)="onAddToCart()">
+                    <mat-icon class="text-gray-500">add_shopping_cart</mat-icon>
+                </button>
+            </div>
+        </div>
+    </div>
+</mat-card>

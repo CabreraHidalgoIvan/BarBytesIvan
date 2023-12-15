@@ -1,0 +1,36 @@
+mat-drawer-content {
+  max-height: calc(100vh - 6rem);
+  overflow-y: auto;
+}
+
+div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+button {
+  display: flex; /* Hace que el botón ocupe todo el ancho disponible */
+  margin-bottom: 20px; /* Espacio entre el botón del carrito y las categorías */
+  /* Estilos para que ocupe el 100% y tenga un sombreado para distinguirse del fondo */
+  width: 100%;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+
+  /* Estilos para que el botón ocupe todo el ancho disponible */
+  display: block;
+  padding: 10px;
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  font-weight: bold;
+
+  /* Estilos para que el botón tenga un color de fondo y un color de texto */
+  background-color: burlywood;
+  color: black;
+
+  /* Estilos para que el botón tenga un color de fondo y un color de texto cuando el cursor esté encima */
+  &:hover {
+    background-color: #f0e68c;
+  }
+}

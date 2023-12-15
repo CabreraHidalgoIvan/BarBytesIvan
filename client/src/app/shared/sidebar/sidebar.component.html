@@ -1,0 +1,19 @@
+<div class="side-nav-content">
+
+    <h2 *ngIf="sideNavStatus">Welcome, {{ name }}!</h2>
+
+    <ul class="nav-list" [ngClass]="{'nav-list-open': sideNavStatus}">
+        <li class="nav-list-item" *ngFor="let item of list">
+
+            <!-- <i class="{{item.icon}}"></i>
+            <span><a href='{{ item.href }}'>{{ item.name}}</a></span> -->
+
+            <button (click)="navigate(item.href)">
+                <i class="{{item.icon}}"></i>
+                <span>{{ item.name }}</span>
+            </button>
+
+        </li>
+    </ul>
+
+</div>

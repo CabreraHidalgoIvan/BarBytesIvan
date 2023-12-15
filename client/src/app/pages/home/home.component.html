@@ -1,0 +1,33 @@
+<mat-drawer-container [autosize]="true" class="min-h-full max-w-full mx-auto border-x">
+
+    <mat-drawer mode="side" opened class="p-6">
+
+        <div>
+            <!-- carrito de compras -->
+            <button mat-icon-button (click)="goToCart()">
+                <!--  Para añadir notificaciones (Más adelante serán dinámicas) -->
+                <mat-icon [matBadge]="itemsQuantity" [matBadgeHidden]="!itemsQuantity" matBadgePosition="after"
+                    matBadgeColor="warn">shopping_cart</mat-icon>
+            </button>
+        </div>
+
+
+        <app-categories (showCategory)="onShowCategory($event)"></app-categories>
+
+    </mat-drawer>
+
+    <mat-drawer-content class="p-6 overflowControll">
+        <app-products-header (columsCountChange)="onColumnsCountChange($event)"
+            (itemsCountChange)="onItemsCountChange($event)" (sortChange)="onSortChange($event)"></app-products-header>
+
+        <mat-grid-list gutterSize="16" [cols]="cols" [rowHeight]="rowHeight">
+
+            <mat-grid-tile *ngFor="let plate of dishes">
+                <app-dishes-box [dishes]="plate" (addToCart)="onAddToCart($event)" class="w-full"
+                    [fullWidthMode]="cols === 1"></app-dishes-box>
+            </mat-grid-tile>
+
+        </mat-grid-list>
+
+    </mat-drawer-content>
+</mat-drawer-container>

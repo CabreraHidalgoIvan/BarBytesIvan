@@ -1,0 +1,28 @@
+<mat-expansion-panel *ngIf="categories">
+    <mat-expansion-panel-header>
+        <mat-panel-title>
+            CATEGORIES
+        </mat-panel-title>
+    </mat-expansion-panel-header>
+
+    <mat-selection-list [multiple]="false">
+        <mat-accordion>
+            <mat-expansion-panel *ngFor="let group of categories">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        {{ group.groupName }}
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+
+                <mat-selection-list [multiple]="false">
+                    <mat-list *ngFor="let subCategory of group.subCategories">
+                        <button (click)="onShowCategory(subCategory)">
+                            <h3>{{ subCategory }}</h3>
+                        </button>
+                    </mat-list>
+                </mat-selection-list>
+            </mat-expansion-panel>
+        </mat-accordion>
+
+    </mat-selection-list>
+</mat-expansion-panel>

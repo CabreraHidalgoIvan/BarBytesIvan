@@ -1,0 +1,38 @@
+<!-- header.component.html -->
+<nav class="navbar navbar-expand navbar-dark bg-dark px-2 d-flex justify-content-between">
+    <!-- Elementos a la izquierda -->
+    <div class="d-flex align-items-center">
+        <div class="side-nav-button p-2 me-3 text-align" (click)="SideNavToggle()">
+            <i class="fa-solid fa-bars" style="color: #ffffff;"></i>
+        </div>
+        <a routerLink="" class="navbar-brand px-4">BarBytesBot</a>
+    </div>
+
+    <!-- Elementos a la derecha -->
+    <div class="d-flex align-items-center">
+        <form class="d-flex me-5 position-relative" (ngSubmit)="onSearch(searchTerm.value)"
+            (keyup)="onSearch(searchTerm.value)">
+            <input class="form-control me-2" type="search" placeholder="search" #searchTerm>
+            <button type="submit" class="btn btn-outline-light">Search</button>
+
+            <div *ngIf="showDropdown" class="search-dropdown">
+                <ul class="list-group">
+                    <li class="list-group-item" *ngFor="let dish of searchResults">
+                        {{ dish.title }}
+                    </li>
+                </ul>
+            </div>
+        </form>
+
+
+        <div class="profile-logo dropstart">
+            <button class="btn btn-outline-light dropdown-toggle" data-bs-toggle="dropdown">User</button>
+            <ul class="dropdown-menu dropdown-menu-dark">
+                <li><a href="#" class="dropdown-item">Sing Up</a></li>
+                <li><a href="#" class="dropdown-item">Log In</a></li>
+                <li><a href="#" class="dropdown-item">Profile</a></li>
+                <li><a href="#" class="dropdown-item" (click)="logout()">Log Out</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>

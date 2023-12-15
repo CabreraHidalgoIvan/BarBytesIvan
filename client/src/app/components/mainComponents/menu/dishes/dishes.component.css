@@ -1,0 +1,21 @@
+:host {
+  display: block;
+  overflow: hidden;
+  height: max-content;
+  border-radius: 1rem;
+  box-shadow: 0 0 0.5rem 0.1rem rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+}
+
+:host(:hover) {
+  transform: scale(1.05);
+}
+
+img {
+  cursor: pointer;
+  transition: transform 0.3s ease-in;
+}
+
+img:hover {
+  transform: scale(1.45);
+}

@@ -1,0 +1,14 @@
+<div class="container-fluid g-0" *ngIf="isLoggedIn">
+  <app-header (sideNavToggled)="sideNavStatus = $event;"></app-header>
+
+  <main>
+    <app-sidebar class="min-h-full" [sideNavStatus]="sideNavStatus"
+      [ngClass]="{'app-sidebar-open': sideNavStatus}"></app-sidebar>
+
+    <div class="display-area p-3 h-full" [ngClass]="{'display-area-shrink': sideNavStatus}">
+      <router-outlet></router-outlet>
+    </div>
+  </main>
+</div>
+
+<router-outlet *ngIf="!isLoggedIn"></router-outlet>

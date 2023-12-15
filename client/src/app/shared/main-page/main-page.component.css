@@ -1,0 +1,55 @@
+/* .main-container {
+  display: grid;
+  grid-template-columns: 70% 30%;
+  height: calc(100vh - 7rem);  Altura ajustada para acomodar el header 
+  margin-left: 60px;  Margen para el sidebar 
+} */
+/* 
+.first-column {
+  display: grid;
+  grid-template-rows: 20% 60% 20%;
+  margin-right: 10px;
+}
+
+.second-column {
+  display: grid;
+  grid-template-rows: 25% 50% 25%;
+} */
+
+/* Estilos adicionales para diferenciar visualmente las filas y columnas */
+/* .row {
+  border: 1px solid black;
+  padding: 10px;
+}
+
+.column {
+  border: 1px solid black;
+  padding: 10px;
+} */
+
+.main-container {
+  display: grid;
+  grid-template-rows: 23% 73%; /* Dos filas: una del 25% y otra del 75% */
+  height: calc(100vh - 7rem); /* Altura ajustada para acomodar el header */
+  margin-left: 60px; /* Margen para el sidebar */
+}
+
+.first-row {
+  /* La primera fila ocupa el 100% del ancho */
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.second-row {
+  display: grid;
+  grid-template-columns: 70% 30%; /* Dos columnas: una del 70% y otra del 30% */
+}
+
+/* Estilos adicionales para diferenciar visualmente las filas y columnas */
+.first-row,
+.left-column,
+.right-column {
+  border: 1px solid black;
+  padding: 10px;
+}
